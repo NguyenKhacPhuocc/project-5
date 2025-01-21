@@ -1,3 +1,4 @@
+"use-client"
 import { Title } from "@/app/components/Title/Title";
 import type { Metadata } from "next";
 
