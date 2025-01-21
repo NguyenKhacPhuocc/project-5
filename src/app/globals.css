@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+.range-sm::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #00adef;
+  cursor: pointer;
+  box-shadow: 0px 8px 8px 0px #000000EB;
+}
+
+.range-sm::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #00adef;
+  cursor: pointer;
+  box-shadow: 0px 8px 8px 0px #000000EB;
+}
+
+.outer-container {
+  position: relative;
+  overflow: hidden;
+  /* Ẩn phần chữ vượt quá khung */
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 5s linear infinite;
+  /* Tạo hiệu ứng chạy qua lại */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(170px);
+    /* Bắt đầu từ ngoài khung bên phải */
+  }
+
+  100% {
+    transform: translateX(-100%);
+    /* Chạy ra ngoài khung bên trái */
+  }
+}
+
+.play-audio .button-switch-state .button-pause {
+  display: none;
+}
+
+.play-audio .button-switch-state.play .button-play {
+  display: none;
+}
+
+.play-audio .button-switch-state.play .button-pause {
+  display: block;
+}
+
+.active {
+  display: block;
+}
+
+.noActive {
+  display: none;
+}

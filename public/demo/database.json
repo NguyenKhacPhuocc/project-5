@@ -1,0 +1,119 @@
+{
+  "categories": {
+    "1": {
+      "image": "https://backend.daca.vn/assets/images/nhac-tre.jpg",
+      "title": "Nhạc trẻ",
+      "description": "Tổng hợp nhạc Nhạc trẻ mới nhất"
+    },
+    "2": {
+      "image": "https://backend.daca.vn/assets/images/bolero.jpg",
+      "title": "Bolero",
+      "description": "Tổng hợp nhạc Bolero mới nhất"
+    },
+    "3": {
+      "image": "https://backend.daca.vn/assets/images/remix.jpg",
+      "title": "Remix",
+      "description": "Tổng hợp nhạc Remix mới nhất"
+    },
+    "4": {
+      "image": "https://backend.daca.vn/assets/images/hip-hop.jpg",
+      "title": "Hip-Hop",
+      "description": "Tổng hợp nhạc Hip-Hop mới nhất"
+    },
+    "5": {
+      "image": "https://backend.daca.vn/assets/images/latin.jpg",
+      "title": "Latin",
+      "description": "Tổng hợp nhạc Latin mới nhất"
+    },
+    "6": {
+      "image": "https://backend.daca.vn/assets/images/acoustic.jpg",
+      "title": "Acoustic",
+      "description": "Tổng hợp nhạc Acoustic mới nhất"
+    },
+    "7": {
+      "image": "https://backend.daca.vn/assets/images/rock.jpg",
+      "title": "Rock",
+      "description": "Tổng hợp nhạc Rock mới nhất"
+    }
+  },
+  "singers": {
+    "1": {
+      "image": "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2022/04/29193519/68d9abea-c7f3-11ec-b991-0ee6b8365494-972x597.jpg",
+      "title": "Joji",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "2": {
+      "image": "https://backend.daca.vn/assets/images/thanh-dat.jpg",
+      "title": "Thành Đạt",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "3": {
+      "image": "https://backend.daca.vn/assets/images/cao-thai-son.jpg",
+      "title": "Cao Thái Sơn",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "4": {
+      "image": "https://backend.daca.vn/assets/images/tlong.jpg",
+      "title": "TLong",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "5": {
+      "image": "https://backend.daca.vn/assets/images/nal.jpg",
+      "title": "Nal",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "6": {
+      "image": "https://www.beneemusic.com/files/2023/02/cover-benee.png",
+      "title": "BENEE",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  },
+  "songs": {
+    "1": {
+      "image": "https://i.ytimg.com/vi/hCbb8w84Bh4/maxresdefault.jpg",
+      "title": "Afterthought",
+      "categoryId": "1",
+      "singerId": [
+        "1",
+        "6"
+      ],
+      "audio": "https://ia801909.us.archive.org/20/items/joji-afterthought/Joji_-_Afterthought.mp3",
+      "lyric": "Lately, I've been slippin' away from you.\n Can you tell me, does it hurt today?\n Yeah, there's no way, yeah (no way, no way, no way).\n To burn, there's no flames, yeah (there's no flames).\n Praying nine to five like a saint for you (like a saint).\n Can you tell me how it turned this way? (How?)\n Yeah, things have changed, yeah (yeah).\n Yeah, filled with rage, yeah (filled with rage).\n So lost in these diamonds.\n So lost in this paradise.\n Don't speed on that highway.\n We need you to shine bright.\n When life gets too complicated.\n Please stand with me after dark.\n I'll stay in the limelight.\n Like a beautiful afterthought.\n Like a beautiful afterthought.\n Sometimes, you'd ask me for something different.\n Hated when you did it, I wish that you didn't.\n I would do things and you'd get annoyed.\n I should've never done them, I wish I was different.\n Why do we have to step away now?\n It's been a year, been a couple days now.\n Since you called me sayin' you're worried.\n Been hard for me dealin' with this space now.\n No company, wishin' we could sit down.\n 'Cause I'm sorry, but you don't want me.\n So lost in these diamonds.\n So lost in this paradise.\n Don't speed on that highway.\n We need you to shine bright.\n When life gets too complicated.\n Please stand with me after dark.\n I'll stay in the limelight.\n Like a beautiful afterthought.\n Like a beautiful afterthought.\n I don't wanna forget about you.\n I don't wanna forget about you, oh.\n I don't wanna forget about you.\n I don't wanna think about it.\n Think about it.",
+      "listen": 189532480
+    },
+    "2": {
+      "image": "https://i.ytimg.com/vi/krZKMMvYMiM/maxresdefault.jpg",
+      "title": "Die For You",
+      "categoryId": "1",
+      "singerId": [
+        "1"
+      ],
+      "audio": "https://ia601602.us.archive.org/33/items/die-for-you-joji-trao-luu-nhac-hot-v.-a-playlist-nhac-cua-tui/Die%20For%20You%20-%20Joji%20-%20Tr%C3%A0o%20L%C6%B0u%20Nh%E1%BA%A1c%20Hot%20-%20V.A%20-%20Playlist%20NhacCuaTui.mp3",
+      "lyric": "Swear I couldn't sleep awake last night \n No point in turning off the lights \n Not the same without your head on my shoulders \n Growing pains, but I don't wanna get older \n Almost like we left it all on red \n Couple of feelings that were laid to rest \n Didn't know about the party was over \n And it's true that I need you, get closer \n Burning photos, had to learn to let go \n I used to weep \n Somebody in other skin (another skin) \n I heard that you're happy without me \n And I hope it's true (I hope, I hope it's true) \n It kills me a little, that's okay \n 'Cause I'd die for you \n You know I'd still die for you \n I hope you're getting everything you need \n Find the puzzle piece and feel completed \n Just wanted you to know every reason \n Hope you really know that I mean that \n I couldn't see the forest from the trees \n The only time we speak is in my dreams \n Burning photos, had to learn to let go \n I used to weep \n Somebody in other skin (another skin) \n I heard that you're happy without me \n And I hope it's true (I hope, I hope it's true) \n It kills me a little, that's okay  'Cause I'd die for you \n You know I'd still die for you",
+      "listen": 2569081427
+    },
+    "3": {
+      "image": "https://backend.daca.vn/assets/images/tat-ca-hoac-khong-la-gi-ca.jpg",
+      "title": "Tất Cả Hoặc Không Là Gì Cả",
+      "categoryId": "3",
+      "singerId": [
+        "3"
+      ],
+      "audio": "https://backend.daca.vn/assets/audios/tat-ca-hoac-khong-la-gi-ca.mp3",
+      "lyric": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "listen": 18800
+    },
+    "4": {
+      "image": "https://backend.daca.vn/assets/images/ruou-mung-hoa-nguoi-dung.jpg",
+      "title": "Rượu Mừng Hóa Người Dưng",
+      "categoryId": "6",
+      "singerId": [
+        "4",
+        "3"
+      ],
+      "audio": "https://backend.daca.vn/assets/audios/ruou-mung-hoa-nguoi-dung.mp3",
+      "lyric": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "listen": 22800
+    }
+  }
+}
