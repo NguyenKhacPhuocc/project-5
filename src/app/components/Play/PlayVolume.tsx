@@ -67,12 +67,12 @@ export const PlayVolume = () => {
           )}
         </button>
         <div className="relative flex items-center">
-          <div className="h-[5px] w-[100%] bg-primary rounded-[50px] absolute left-0 top-[0px] inner-volume-current"></div>
+          <div className="h-[5px] w-[50%] bg-primary rounded-[50px] absolute left-0 top-[0px] inner-volume-current"></div>
           <input
             type="range"
             min={0}
             max={100}
-            defaultValue={100}
+            defaultValue={50}
             className="w-full cursor-pointer appearance-none rounded-[50px] bg-[#ffffff0a] h-[4px] range-sm inner-volume-show"
             onChange={handleChange}
           />

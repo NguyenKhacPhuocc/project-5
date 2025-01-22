@@ -2,25 +2,30 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { Title } from "./components/Title/Title";
-import { SongItem } from "./components/Song/SongItem";
+// import { SongItem } from "./components/Song/SongItem";
 import { CategoryOutStanding } from "./components/CategoryOutStanding/CategoryOutStanding";
 import { dbFirebase } from "./firebaseConfig";
 import { onValue, ref } from "firebase/database";
+import { SongSection1 } from "./components/SongSection1/SongSection1";
 
 export const metadata: Metadata = {
-  title: "Project 5",
+  title: "MuseStream",
   description: "Project nghe nhạc trực tuyến",
+  icons: {
+    icon: "demo/icon-logo.png"
+  },
 };
 
-interface Song {
-  id: string;
-  image: string;
-  title: string;
-  singer: string[];
-  listen: number;
-  link: string,
-  audio: string,
-}
+// interface Song {
+//   id: string;
+//   image: string;
+//   title: string;
+//   singer: string[];
+//   listen: number;
+//   link: string,
+//   audio: string,
+//   wishlist?: boolean,
+// }
 
 interface Category {
   id: string,
@@ -33,38 +38,41 @@ interface Category {
 
 
 export default function Home() {
+
   // data section 1
-  const data1: Song[] = [];
-  const songRef = ref(dbFirebase, 'songs');
-  onValue(songRef, (items) => {
-    items.forEach((item) => {
-      const key = item.key;
-      const data = item.val();
-      if (data1.length < 3) {
-        const listNameSinger: any = [];
-        for (let index = 0; index < data.singerId.length; index++) {
-          const element = data.singerId[index];
-          onValue(ref(dbFirebase, '/singers/' + element), (itemNameSinger) => {
-            listNameSinger.push(itemNameSinger.val().title);
-          })
-          if (index != data.singerId.length - 1) {
-            listNameSinger.push(', ');
-          }
-        }
-        data1.push(
-          {
-            id: key,
-            image: data.image,
-            title: data.title,
-            singer: listNameSinger,
-            listen: data.listen,
-            link: "/songs/" + key,
-            audio: data.audio,
-          }
-        );
-      };
-    })
-  })
+  // const data1: Song[] = [];
+  // const songRef = ref(dbFirebase, 'songs');
+  // onValue(songRef, (items) => {
+  //   items.forEach((item) => {
+  //     const key = item.key;
+  //     const data = item.val();
+  //     if (data1.length < 3) {
+  //       const listNameSinger: any = [];
+  //       for (let index = 0; index < data.singerId.length; index++) {
+  //         const element = data.singerId[index];
+  //         onValue(ref(dbFirebase, '/singers/' + element), (itemNameSinger) => {
+  //           listNameSinger.push(itemNameSinger.val().title);
+  //         })
+  //         if (index != data.singerId.length - 1) {
+  //           listNameSinger.push(', ');
+  //         }
+  //       }
+  //       // const wishlistState = data.wishlist[userId];
+  //       data1.push(
+  //         {
+  //           id: key,
+  //           image: data.image,
+  //           title: data.title,
+  //           singer: listNameSinger,
+  //           listen: data.listen,
+  //           link: "/songs/" + key,
+  //           audio: data.audio,
+  //           // wishlist: wishlistState,
+  //         }
+  //       );
+  //     };
+  //   })
+  // })
   // data section 1
 
   // data section 2
@@ -110,11 +118,7 @@ export default function Home() {
   })
   // data section 3
 
-  if (data1.length == 0) {
-    return (
-      <><div>loading</div> </>
-    )
-  }
+  
   return (
     <>
       <section className="flex gap-[20px] mb-[30px]">
@@ -141,15 +145,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-1">
+        {/* <div className="flex-1">
           <Title text="Nghe Nhiều" />
           <div className="mt-[20px] grid grid-rows-1 gap-[12px]">
-            {/* item */}
             {data1.map((item, index) => (
               <SongItem key={index} item={item} />
             ))}
           </div>
-        </div>
+        </div> */}
+        <SongSection1 />
       </section>
 
       <section className="mb-[30px]">

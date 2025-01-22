@@ -43,8 +43,10 @@ export default async function SingerDetailPage(props: any) {
           image: data.image,
           title: data.title,
           singer: listNameSinger.join(', '),
+          listen: data.listen,
           time: "4:32",
           link: '/songs/' + key,
+          audio: data.audio,
         })
       }
     })

@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa";
 
 export const ButtonPlay = (props: any) => {
 
-  const { item } = props;
+  const { item, className } = props;
   const handlePlay = () => {
     // phát nhạc
     const audio = item.audio;
@@ -49,8 +49,8 @@ export const ButtonPlay = (props: any) => {
 
     elementAudio.onloadedmetadata = () => {
       const totalTime = elementAudio.duration;
-
       elementPlayTimeShow.max = totalTime;
+
       // lấy ra thời gian hiện tại
       elementAudio.ontimeupdate = () => {
         const currentTime = elementAudio.currentTime;
@@ -63,15 +63,21 @@ export const ButtonPlay = (props: any) => {
         }
       }
     }
+    // xóa trạng thái play ở bài hát trước đó đang phát
+    const elementSongOld = document.querySelector(`[song-id].activeSong`);
+    if (elementSongOld) {
+      elementSongOld.classList.remove("activeSong");
+    }
+
+    // thêm trạng thái play cho bài hát đang được bật
+    const elementSong = document.querySelector(`[song-id = "${item.id}"]`);
+    elementSong?.classList.add("activeSong");
   }
-
-
-
 
   return (
     <>
       <button
-        className="text-[15px] text-white w-[34px] h-[34px] rounded-[50%] flex justify-center items-center border border-white hover:text-primary hover:border-primary transition-colors duration-200"
+        className={className}
         onClick={handlePlay}
       >
         <FaPlay />

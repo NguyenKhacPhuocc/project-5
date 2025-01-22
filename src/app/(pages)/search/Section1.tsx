@@ -7,7 +7,7 @@ import { get, onValue, ref } from "firebase/database";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-
+ 
 export const Section1 = () => {
   const searchParams = useSearchParams();
   const [dataFinal, setDataFinal] = useState<any[]>([]);
@@ -37,8 +37,10 @@ export const Section1 = () => {
             image: data.image,
             title: data.title,
             singer: listNameSinger.join(', '),
+            listen: data.listen,
             time: "4:32",
             link: "/songs/" + key,
+            audio: data.audio,
           });
         }
         setDataFinal(dataSection1);

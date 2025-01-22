@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CardInfo } from "@/app/components/CategoryOutStanding/CardInfo";
-import { SongItem2 } from "@/app/components/Song/SongItem2";
+import { CardInfoMusic } from "@/app/components/CategoryOutStanding/CardInfoMusic";
+// import { SongItem2 } from "@/app/components/Song/SongItem2";
+import SongSameCategory from "@/app/components/SongSameCategory/SongSameCategory";
 import { Title } from "@/app/components/Title/Title";
-import { dbFirebase } from "@/app/firebaseConfig";
+import { authFirebase, dbFirebase } from "@/app/firebaseConfig";
 import { onValue, ref } from "firebase/database";
 import type { Metadata } from "next";
 
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default async function SongDetailPage(props: any) {
+  const userId: any = authFirebase?.currentUser?.uid;
+  console.log(userId);
   const { id } = await props.params;
   const detailSong: any = [];
   onValue(ref(dbFirebase, '/songs/' + id), (items) => {
@@ -23,15 +26,18 @@ export default async function SongDetailPage(props: any) {
         listNameSinger.push(item.val().title);
       })
     }
-    console.log(data.categoryId + " sss");
     detailSong.push({
       image: data.image,
       title: data.title,
       singers: listNameSinger.join(', '),
       lyric: data.lyric,
       id: data.categoryId,
+      audio: data.audio,
+      wishlist: data.wishlist ? data.wishlist[userId] : false,
     })
   })
+
+  console.log(userId);
   if (!detailSong) {
     return <div>Loading...</div>;
   }
@@ -55,9 +61,11 @@ export default async function SongDetailPage(props: any) {
           title: data.title,
           image: data.image,
           singer: listNameSinger.join(', '),
+          listen: data.listen,
           time: "4:32",
-          wishlist: false,
+          wishlist: data.wishlist ? data.wishlist[userId] : false,
           link: '/songs/' + key,
+          audio: data.audio,
         })
       }
     })
@@ -68,10 +76,13 @@ export default async function SongDetailPage(props: any) {
 
   return (
     <>
-      <CardInfo
+      <CardInfoMusic
         image={detailSong[0].image}
         title={detailSong[0].title}
         description={detailSong[0].singers}
+        audio={detailSong[0].audio}
+        wishlist={detailSong[0].wishlist}
+        id={id}
       />
 
       <section className="">
@@ -87,13 +98,7 @@ export default async function SongDetailPage(props: any) {
         </div>
       </section>
 
-      <section className="">
-        <Title text={"Bài Hát Cùng Danh Mục"} />
-        {dataSong.map((item: any, index: number) => (
-          <SongItem2 key={index} item={item} />
-        ))}
-      </section>
-
+      <SongSameCategory idSong={id} idCategory={detailSong[0].id} />
     </>
   );
 }

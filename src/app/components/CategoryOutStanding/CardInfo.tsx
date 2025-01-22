@@ -7,7 +7,7 @@ export const CardInfo = (props: { image: string, title: string, description: str
         <div className="w-[180px] h-[180px] rounded-[15px] overflow-hidden">
           <img
             src={image}
-            alt="joji"
+            alt={title}
             className="w-full h-full object-cover"
           />
         </div>

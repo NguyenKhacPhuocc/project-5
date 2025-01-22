@@ -11,7 +11,7 @@ export const Search = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const handleSearch = (event: any) => {
-    event.preventDefault();
+    event.preventDefault(); 
     const key = event.target.key.value;
     router.push(`/search?key=${key}`);
   }

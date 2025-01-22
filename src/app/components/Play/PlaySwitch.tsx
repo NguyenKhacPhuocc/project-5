@@ -21,17 +21,42 @@ export const PlaySwitch = () => {
 
   }
 
+
+  const handleNext = () => {
+    const currentSong = document.querySelector("[song-id].activeSong");
+    if (currentSong) {
+      const nextSong = currentSong.nextElementSibling;
+      if (nextSong) {
+        const buttonPlay: any = nextSong.querySelector(".inner-button-play");
+        buttonPlay.click();
+      }
+
+    }
+  }
+
+  const handleBack = () => {
+    const currentSong = document.querySelector("[song-id].activeSong");
+    if (currentSong) {
+      const nextSong = currentSong.previousElementSibling
+      if (nextSong) {
+        const buttonPlay: any = nextSong.querySelector(".inner-button-play");
+        buttonPlay.click();
+      }
+
+    }
+  }
+
   return (
     <>
       <div className="flex gap-[42px] items-center justify-center">
-        <button className="text-[22px]  text-white hover:bg-primary rounded-[50%] p-[2px] transition-colors duration-100" >
+        <button className="text-[22px]  text-white hover:bg-primary rounded-[50%] p-[2px] transition-colors duration-100" onClick={handleBack}>
           <BsFillSkipStartFill />
         </button>
         <button className="text-[19px] text-white w-[38px] aspect-square bg-primary rounded-[50%] flex justify-center items-center hover:text-[22px] button-switch-state duration-100" onClick={handlePlay}>
           <FaPlay className="button-play" />
           <FaPause className="button-pause" />
         </button>
-        <button className="text-[22px]  text-white hover:bg-primary rounded-[50%] p-[2px] transition-colors duration-100" >
+        <button className="text-[22px]  text-white hover:bg-primary rounded-[50%] p-[2px] transition-colors duration-100" onClick={handleNext}>
           <BsFillSkipEndFill />
         </button>
       </div>

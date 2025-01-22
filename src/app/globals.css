@@ -75,3 +75,9 @@
 .noActive {
   display: none;
 }
+
+
+[song-id].activeSong .inner-button-play{
+  background-color: #00ADEF;
+  border-color: #00ADEF;
+}
