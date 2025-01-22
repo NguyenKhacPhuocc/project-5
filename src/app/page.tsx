@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { Title } from "./components/Title/Title";
@@ -7,6 +6,7 @@ import { CategoryOutStanding } from "./components/CategoryOutStanding/CategoryOu
 import { dbFirebase } from "./firebaseConfig";
 import { onValue, ref } from "firebase/database";
 import { SongSection1 } from "./components/SongSection1/SongSection1";
+import { Section2HomePage } from "./components/Section2HomePage/Section2HomePage";
 
 export const metadata: Metadata = {
   title: "MuseStream",
@@ -16,16 +16,6 @@ export const metadata: Metadata = {
   },
 };
 
-// interface Song {
-//   id: string;
-//   image: string;
-//   title: string;
-//   singer: string[];
-//   listen: number;
-//   link: string,
-//   audio: string,
-//   wishlist?: boolean,
-// }
 
 interface Category {
   id: string,
@@ -38,42 +28,6 @@ interface Category {
 
 
 export default function Home() {
-
-  // data section 1
-  // const data1: Song[] = [];
-  // const songRef = ref(dbFirebase, 'songs');
-  // onValue(songRef, (items) => {
-  //   items.forEach((item) => {
-  //     const key = item.key;
-  //     const data = item.val();
-  //     if (data1.length < 3) {
-  //       const listNameSinger: any = [];
-  //       for (let index = 0; index < data.singerId.length; index++) {
-  //         const element = data.singerId[index];
-  //         onValue(ref(dbFirebase, '/singers/' + element), (itemNameSinger) => {
-  //           listNameSinger.push(itemNameSinger.val().title);
-  //         })
-  //         if (index != data.singerId.length - 1) {
-  //           listNameSinger.push(', ');
-  //         }
-  //       }
-  //       // const wishlistState = data.wishlist[userId];
-  //       data1.push(
-  //         {
-  //           id: key,
-  //           image: data.image,
-  //           title: data.title,
-  //           singer: listNameSinger,
-  //           listen: data.listen,
-  //           link: "/songs/" + key,
-  //           audio: data.audio,
-  //           // wishlist: wishlistState,
-  //         }
-  //       );
-  //     };
-  //   })
-  // })
-  // data section 1
 
   // data section 2
   const data2: Category[] = []
@@ -145,18 +99,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div className="flex-1">
-          <Title text="Nghe Nhiều" />
-          <div className="mt-[20px] grid grid-rows-1 gap-[12px]">
-            {data1.map((item, index) => (
-              <SongItem key={index} item={item} />
-            ))}
-          </div>
-        </div> */}
         <SongSection1 />
       </section>
 
-      <section className="mb-[30px]">
+      {/* <section className="mb-[30px]">
         <div className="mb-[20px]">
           <Title text={"Danh Mục Nổi Bật"} />
         </div>
@@ -166,7 +112,8 @@ export default function Home() {
           ))}
 
         </div>
-      </section>
+      </section> */}
+      <Section2HomePage/>
 
       <section className="mb-[30px]">
         <div className="mb-[20px]">
