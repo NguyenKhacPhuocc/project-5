@@ -67,13 +67,35 @@ export const Sider = () => {
   return (
     <>
       <div className="bg-bg2 text-white h-[100vh] fixed w-[280px] ">
-        <div className="bg-bg3 py-[25px] px-[20px]">
-          <Link href={"/"}>
+        <div className="bg-bg3 py-[22px] px-[20px]">
+          <Link href={"/"} className="flex justify-start items-center gap-[12px] transition-transform transform hover:scale-110 hover:rotate-[-2deg]">
             <img
-              src="/Logo.svg"
+              src="/icon-logo.png"
               alt="logo"
-              className="w-auto h-[42px]"
+              className="w-auto h-[50px]"
             />
+            <div className="text-primary text-[24px] font-[700] leading-[28px] relative">
+
+              {/* Chữ MuseStream với hiệu ứng nền mờ */}
+              <span className="absolute inset-0 blur-md text-primary opacity-50">MuseStream</span>
+              <span className="relative z-10">MuseStream</span>
+
+              {/* Icon sole */}
+              {["🎵", "✨", "🎶", "🎧", "🎷"].map((icon, index) => (
+                <span
+                  key={index}
+                  className="absolute text-yellow-400 text-base opacity-60 transition-opacity"
+                  style={{
+                    top: index % 2 === 0 ? `10px` : `-10px`, // Sole: icon chẵn ở dưới, lẻ ở trên
+                    left: `${(index / 5) * 100 + (index % 2 === 0 ? 5 : -5)}%`, // Sole icon
+                    transform: 'translateX(-50%)',
+                    zIndex: 0,
+                  }}
+                >
+                  {icon}
+                </span>
+              ))}
+            </div>
           </Link>
         </div>
         <nav className="mt-[30px] px-[20px]">
