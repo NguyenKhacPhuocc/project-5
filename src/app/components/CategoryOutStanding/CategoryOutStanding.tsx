@@ -7,7 +7,7 @@ export const CategoryOutStanding = (props: { item: any }) => {
   const { item } = props;
   return (
     <>
-      <Link href={item.link} className="flex flex-col gap-[10px] p-[10px] rounded-[12px] hover:bg-[#1F1F1F] transition-colors duration-100">
+      <Link href={item.link} className="flex flex-col gap-[10px] p-[10px] rounded-[12px] hover:bg-[#1F1F1F] transition-colors ">
         <div className="w-[100%] aspect-[1/1] overflow-hidden  rounded-[10px] ">
           <img
             src={item.image} alt={item.title}
