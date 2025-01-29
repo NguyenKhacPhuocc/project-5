@@ -108,7 +108,7 @@ export const Sider = () => {
                     href={item.link}
                     className={
                       "flex gap-[20px] items-center hover:text-primary transition-colors duration-200 py-[5px] " +
-                      (pathname === item.link ? "text-primary" : "text-white")
+                      (pathname === item.link ? "text-primary text-shadow-glow " : "text-white")
                     }
                   >
                     <span className="text-[22px]">

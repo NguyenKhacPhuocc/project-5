@@ -19,7 +19,7 @@ export const SongItem = (props: { item: any }) => {
 
           </Link>
           <div className="">
-            <Link href={item.link} className="font-[600] text-white text-[16px] leading-[19px] hover:text-primary transition-colors duration-300">
+            <Link href={item.link} className="font-[600] text-white text-[16px] leading-[19px] hover:text-primary transition-colors duration-200">
               {item.title}
             </Link>
             <div className="font-[400] text-[#FFFFFF80] text-[12px] leading-[15px] mt-[5px]">

@@ -40,10 +40,10 @@ export const Section3HomePage = () => {
   return (
     <>
       <section className="mb-[30px]">
-        <div className="mb-[20px]">
+        <div className="mb-[10px]">
           <Title text={"Ca Sĩ Nổi Bật"} />
         </div>
-        <div className="grid grid-cols-5 gap-[20px]">
+        <div className="grid grid-cols-5 ">
           {data3.map((item, index) => (
             <CategoryOutStanding key={index} item={item} />
           ))}

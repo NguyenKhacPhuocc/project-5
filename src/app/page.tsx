@@ -7,9 +7,6 @@ import { Section3HomePage } from "./components/Section3HomePage/Section3HomePage
 export const metadata: Metadata = {
   title: "MuseStream",
   description: "Project nghe nhạc trực tuyến",
-  icons: {
-    icon: "demo/icon-logo.png"
-  },
 };
 
 export default function Home() {

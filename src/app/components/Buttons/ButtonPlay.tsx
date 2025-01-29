@@ -1,10 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import { dbFirebase } from "@/app/firebaseConfig";
+import { ref, update } from "firebase/database";
+// import { useState } from "react";
 import { FaPlay } from "react-icons/fa";
 
 export const ButtonPlay = (props: any) => {
 
   const { item, className } = props;
+  // const [link, setLink] = useState(""); // State để quản lý href động
   const handlePlay = () => {
     // phát nhạc
     const audio = item.audio;
@@ -40,6 +44,13 @@ export const ButtonPlay = (props: any) => {
       innerSinger.innerHTML = `${item.singer}`
     }
 
+    // thêm đường link hiển thị lời bài hát
+    const innerShowLyric: any = elementPlayAudio?.querySelector(".button-show-lyric");
+    if (innerShowLyric) {
+      // setLink(`${item.link}`);
+      innerShowLyric.href = `${item.link}`;
+    }
+
     const PlayState = elementPlayAudio?.querySelector(".button-switch-state");
     PlayState?.classList.add("play");
 
@@ -48,9 +59,21 @@ export const ButtonPlay = (props: any) => {
     const elementPlayTimeShow: any = elementPlayAudio?.querySelector(".play-time .play-time-show");
 
     elementAudio.onloadedmetadata = () => {
+      const elementTotalTime = elementPlayAudio?.querySelector(".total-time");
+      const elementCurrentTime = elementPlayAudio?.querySelector(".current-time");
       const totalTime = elementAudio.duration;
       elementPlayTimeShow.max = totalTime;
+      // cập nhật lượt nghe
+      let listenTime = 0; // Biến lưu thời gian đã nghe
+      let listenTracked = false;
 
+      if (elementTotalTime) {
+        const totalTimeRounded = Math.round(totalTime); // Làm tròn số nguyên
+        const minutes = Math.floor(totalTimeRounded / 60); // Lấy số phút
+        const seconds = totalTimeRounded % 60; // Lấy số giây còn lại
+        const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`; // Định dạng phút:giây
+        elementTotalTime.innerHTML = formattedTime; // Gán vào HTML
+      }
       // lấy ra thời gian hiện tại
       elementAudio.ontimeupdate = () => {
         const currentTime = elementAudio.currentTime;
@@ -60,6 +83,34 @@ export const ButtonPlay = (props: any) => {
         if (percent === 100) {
           elementPlay.classList.remove("play");
           elementAudio.pause();
+          const currentSong = document.querySelector("[song-id].activeSong");
+          if (currentSong) {
+            const nextSong = currentSong.nextElementSibling;
+            if (nextSong) {
+              const buttonPlay: any = nextSong.querySelector(".inner-button-play");
+              buttonPlay.click();
+            }
+
+          }
+        }
+        if (elementCurrentTime) {
+          const currentTimeRounded = Math.round(currentTime); // Làm tròn số nguyên
+          const minutes = Math.floor(currentTimeRounded / 60); // Lấy số phút
+          const seconds = currentTimeRounded % 60; // Lấy số giây còn lại
+          const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`; // Định dạng phút:giây
+          elementCurrentTime.innerHTML = formattedTime; // Gán vào HTML
+        }
+        // Đếm thời gian người dùng nghe thực sự
+        if (!elementAudio.paused && !elementAudio.seeking) {
+          listenTime += 0.1; // Cộng dồn mỗi 100ms (thời gian ontimeupdate gọi lại)
+        }
+        // Nếu người dùng nghe đủ 30 giây
+        if (!listenTracked && listenTime >= 30) {
+          listenTracked = true; // Đảm bảo chỉ tăng một lần
+
+          // Cập nhật lượt nghe trong Firebase
+          const songRef = ref(dbFirebase, `/songs/${item.id}`);
+          update(songRef, { listen: (item.listen || 0) + 1 });
         }
       }
     }
@@ -72,6 +123,7 @@ export const ButtonPlay = (props: any) => {
     // thêm trạng thái play cho bài hát đang được bật
     const elementSong = document.querySelector(`[song-id = "${item.id}"]`);
     elementSong?.classList.add("activeSong");
+
   }
 
   return (

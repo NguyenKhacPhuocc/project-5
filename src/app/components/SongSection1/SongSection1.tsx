@@ -18,7 +18,7 @@ interface Song {
 }
 
 export const SongSection1 = () => {
-  const userId:any = authFirebase?.currentUser?.uid;
+  const userId: any = authFirebase?.currentUser?.uid;
   console.log(userId);
   // data section 1
   const data1: Song[] = [];
@@ -34,9 +34,6 @@ export const SongSection1 = () => {
           onValue(ref(dbFirebase, '/singers/' + element), (itemNameSinger) => {
             listNameSinger.push(itemNameSinger.val().title);
           })
-          if (index != data.singerId.length - 1) {
-            listNameSinger.push(', ');
-          }
         }
         console.log(data.wishlist?.[userId]);
         data1.push(
@@ -44,7 +41,7 @@ export const SongSection1 = () => {
             id: key,
             image: data.image,
             title: data.title,
-            singer: listNameSinger,
+            singer: listNameSinger.join(", "),
             listen: data.listen,
             link: "/songs/" + key,
             audio: data.audio,

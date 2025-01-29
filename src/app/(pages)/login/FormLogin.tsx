@@ -19,7 +19,7 @@ export const FormLogin = () => {
 
           const user = userCredential.user;
           if (user) {
-            router.push("/");
+            router.push("/");  // quay về trang chủ 
           }
         })
         .catch((error) => {

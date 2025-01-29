@@ -4,8 +4,8 @@
 import { ButtonPlay } from "../Buttons/ButtonPlay";
 import { ButtonWishlist } from "../Buttons/ButtonWishlist";
 
-export const CardInfoMusic = (props: { image: string, title: string, description: string, audio: string, wishlist: boolean, id: any }) => {
-  const { image, title, description, audio, wishlist, id } = props;
+export const CardInfoMusic = (props: { image: string, title: string, description: string, audio: string, wishlist: boolean,listen:any, id: any }) => {
+  const { image, title, description, audio, wishlist,listen, id } = props;
   const detailSong: any = [];
   detailSong.push({
     image: image,
@@ -13,6 +13,7 @@ export const CardInfoMusic = (props: { image: string, title: string, description
     singers: description,
     audio: audio,
     wishlist: wishlist,
+    listen:listen,
     id: id,
   })
 

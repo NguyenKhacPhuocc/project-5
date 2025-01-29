@@ -5,10 +5,24 @@ import Link from "next/link";
 export const SongItemSearch = (props: any) => {
 
   const { item } = props;
+
+  const handleOnClick = () => {
+    const searchState = document.querySelector(".SearchState");
+    if (searchState) {
+      searchState.classList.add("noActive");
+      searchState.classList.remove("active");
+    }
+  };
+
+
   return (
     <>
       <div className=" mt-[10px] flex items-center justify-between bg-bg2 py-[5px] px-[10px] rounded-[15px]">
-        <Link href={item.link} className="flex items-center gap-[12px]">
+        <Link
+          href={item.link}
+          className="flex items-center gap-[12px]"
+          onClick={handleOnClick}
+        >
           <div className="h-[50px] w-[50px] rounded-[8px] overflow-hidden">
             <img
               src={item.image}
@@ -24,14 +38,6 @@ export const SongItemSearch = (props: any) => {
           <div className="font-[400] text-[14px] leading-[17px] text-[#ffffff]">
             {item.singer}
           </div>
-          {/* <div className="flex gap-[18px] items-center">
-            <div className="font-[400] text-[14px] leading-[17px] text-[#ffffff]">
-              {item.time}
-            </div>
-            <button className={"font-[400] text-[20px] leading-[17px] " + (item.wishlist ? "text-primary" : "text-[#ffffff] hover:text-primary")}>
-              {item.wishlist ? <FaHeart /> : <FaRegHeart />}
-            </button>
-          </div> */}
         </div>
       </div>
     </>
