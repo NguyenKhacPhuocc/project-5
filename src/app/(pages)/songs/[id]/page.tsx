@@ -83,7 +83,7 @@ export default async function SongDetailPage(props: any) {
         description={detailSong[0].singers}
         audio={detailSong[0].audio}
         wishlist={detailSong[0].wishlist}
-        listen = {detailSong[0].listen}
+        listen={detailSong[0].listen}
         id={id}
       />
 

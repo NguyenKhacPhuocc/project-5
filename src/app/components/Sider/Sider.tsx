@@ -4,6 +4,7 @@
 import Link from "next/link"
 import { IoMdHome } from "react-icons/io";
 import { FaMusic, FaHeart, FaPodcast } from "react-icons/fa6";
+import { FaRankingStar } from "react-icons/fa6";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
 import { FaUserPlus } from "react-icons/fa6";
@@ -38,6 +39,10 @@ export const Sider = () => {
       icon: <><FaPodcast /></>,
       title: "Ca sĩ",
       link: "/singers",
+    }, {
+      icon: <><FaRankingStar /></>,
+      title: "Bảng xếp hạng",
+      link: "/ranking",
     }, {
       icon: <><FaHeart /></>,
       title: "Bài hát yêu thích",

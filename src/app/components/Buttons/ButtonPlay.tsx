@@ -87,10 +87,9 @@ export const ButtonPlay = (props: any) => {
           if (currentSong) {
             const nextSong = currentSong.nextElementSibling;
             if (nextSong) {
-              const buttonPlay: any = nextSong.querySelector(".inner-button-play");
-              buttonPlay.click();
+              const buttonPlay: any = nextSong.querySelector(".inner-button-play") || nextSong.querySelector(".button-play");
+              buttonPlay?.click();
             }
-
           }
         }
         if (elementCurrentTime) {

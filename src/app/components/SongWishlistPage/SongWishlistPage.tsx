@@ -7,7 +7,6 @@ import { onValue, ref } from "firebase/database";
 
 export default function SongWishListPage() {
   const userId: any = authFirebase?.currentUser?.uid;
-  console.log(userId);
   const dataWishlistSong: any = []
   onValue(ref(dbFirebase, '/songs/'), (items) => (
     items.forEach((item) => {
@@ -27,7 +26,6 @@ export default function SongWishListPage() {
           image: data.image,
           title: data.title,
           singer: listNameSinger.join(', '),
-          time: "4:32",
           listen: data.listen,
           wishlist: data.wishlist?.[userId],
           link: '/songs/' + key,

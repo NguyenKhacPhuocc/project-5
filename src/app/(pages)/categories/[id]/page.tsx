@@ -49,9 +49,8 @@ export default async function CategoryDetailPage(props: any) {
           title: data.title,
           singer: listNameSinger,
           listen: data.listen,
-          time: "4:32",
           link: "/songs/" + key,
-          audio:data.audio,
+          audio: data.audio,
         })
       }
     })

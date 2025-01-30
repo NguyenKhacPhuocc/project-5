@@ -26,7 +26,7 @@ export const SongItem = (props: { item: any }) => {
               {item.singer}
             </div>
             <div className="font-[400] text-[#FFFFFF] text-[12px] leading-[15px] mt-[8px]">
-              {item.listen} lượt nghe
+              {item.listen.toLocaleString("vi-VN")} lượt nghe
             </div>
           </div>
         </div>

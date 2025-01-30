@@ -35,7 +35,6 @@ export default function SongSameCategory(props: any) {
               image: data.image,
               singer: listNameSinger.join(", "),
               listen: data.listen,
-              time: "4:32",
               wishlist: data.wishlist ? data.wishlist[userId] : false,
               link: "/songs/" + key,
               audio: data.audio,

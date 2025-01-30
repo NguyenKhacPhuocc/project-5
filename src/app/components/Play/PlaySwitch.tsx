@@ -31,8 +31,8 @@ export const PlaySwitch = () => {
     if (currentSong) {
       const nextSong = currentSong.nextElementSibling;
       if (nextSong) {
-        const buttonPlay: any = nextSong.querySelector(".inner-button-play");
-        buttonPlay.click();
+        const buttonPlay: any = nextSong.querySelector(".inner-button-play") || nextSong.querySelector(".button-play");
+        buttonPlay?.click();
       }
 
     }
@@ -43,8 +43,8 @@ export const PlaySwitch = () => {
     if (currentSong) {
       const nextSong = currentSong.previousElementSibling
       if (nextSong) {
-        const buttonPlay: any = nextSong.querySelector(".inner-button-play");
-        buttonPlay.click();
+        const buttonPlay: any = nextSong.querySelector(".inner-button-play") || nextSong.querySelector(".button-play");
+        buttonPlay?.click();
       }
 
     }
@@ -79,7 +79,7 @@ export const PlaySwitch = () => {
         <Link
           href={""}
           className="text-[20px]  text-white hover:bg-primary rounded-[50%] p-[4px] transition-colors duration-100 button-show-lyric"
-          // onClick={handleClick}
+        // onClick={handleClick}
         >
           <MdOutlineLyrics />
         </Link>

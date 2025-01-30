@@ -1,4 +1,4 @@
-import { SingersPage } from "@/app/components/SingersPage/SingersPage";
+import SongRankingPage from "@/app/components/SongRankingPage/SongRankingPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description: "Project nghe nhạc trực tuyến",
 };
 
-export default function SingerPage() {
+export default function RankingPage() {
   
   return (
     <>
-      <SingersPage/>
+      <SongRankingPage/>
     </>
   );
 }
