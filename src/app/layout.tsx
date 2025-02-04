@@ -4,6 +4,7 @@ import { Sider } from "./components/Sider/Sider";
 import { Search } from "./components/Search/Search";
 import { Play } from "./components/Play/Play";
 import { Suspense } from "react";
+import { Alart } from "./components/Alart/Alart";
 
 export const metadata: Metadata = {
   title: "MuseStream",
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className="bg-bg1">
+        <Alart/>
 
         <div className="container mx-auto">
           <div className="flex items-start">

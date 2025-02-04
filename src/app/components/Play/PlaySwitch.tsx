@@ -49,16 +49,6 @@ export const PlaySwitch = () => {
 
     }
   }
-  // const [hreff, setHreff] = useState("/songs/1");
-  // useEffect(() => {
-  //   const ButtonShowLyric = document.querySelector(".button-show-lyric");
-  //   // ButtonShowLyric.click();
-  // }, [hreff])
-
-  // const handleClick = (event: any) => {
-  //   console.log(event.href);
-  //   setHreff(event.href);
-  // }
 
   const handleRepeat = () => {
     const elementRepeatAudio: any = document.querySelector(".play-audio");

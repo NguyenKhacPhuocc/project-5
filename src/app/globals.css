@@ -103,3 +103,8 @@
 .play-audio .button-switch-repeat.repeat .button-unrepeat:hover {
   color: white;
 }
+
+.hidden {
+  display: none;
+}
+

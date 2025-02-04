@@ -13,6 +13,7 @@ export default function Home() {
 
   return (
     <>
+
       <section className="flex gap-[20px] mb-[30px]">
         <div className="w-[534px]">
           <div
@@ -40,9 +41,9 @@ export default function Home() {
         <SongSection1 />
       </section>
 
-      <Section2HomePage/>
+      <Section2HomePage />
 
-      <Section3HomePage/>
+      <Section3HomePage />
     </>
   );
 }

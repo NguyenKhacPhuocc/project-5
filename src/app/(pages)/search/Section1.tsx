@@ -49,8 +49,6 @@ export const Section1 = () => {
     fetchData();
   }, [searchKey])
 
-  console.log(dataFinal);
-
   return (
     <>
       {dataFinal.length > 0 ? (

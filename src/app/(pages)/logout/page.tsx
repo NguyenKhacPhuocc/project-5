@@ -9,6 +9,17 @@ export default function LogoutPage() {
   const router = useRouter();
   useEffect(() => {
     signOut(authFirebase).then(() => {
+      const alartLogin = document.querySelector(".alart");
+      if (alartLogin) {
+        const textAlartLogin = document.querySelector(".text-alart");
+        if (textAlartLogin) {
+          textAlartLogin.innerHTML = `Đăng xuất`;
+          alartLogin.classList.remove("hidden");
+          setTimeout(() => {
+            alartLogin.classList.add("hidden");
+          }, 3000);
+        }
+      }
       router.push("/login");
     }).catch((error) => {
       console.log(error);

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import { authFirebase} from "@/app/firebaseConfig";
+import { authFirebase } from "@/app/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 
@@ -19,6 +19,17 @@ export const FormLogin = () => {
 
           const user = userCredential.user;
           if (user) {
+            const alartLogin = document.querySelector(".alart");
+            if (alartLogin) {
+              const textAlartLogin = document.querySelector(".text-alart");
+              if (textAlartLogin) {
+                textAlartLogin.innerHTML = `Đăng nhập thành công`;
+                alartLogin.classList.remove("hidden");
+                setTimeout(() => {
+                  alartLogin.classList.add("hidden");
+                }, 3000);
+              }
+            }
             router.push("/");  // quay về trang chủ 
           }
         })
@@ -31,6 +42,7 @@ export const FormLogin = () => {
 
   return (
     <>
+
       <form className="flex flex-col w-[500px]" onSubmit={handleLogin}>
         <label htmlFor="email" className="text-[16px] font-[600] text-white mb-[5px]">
           Email

@@ -14,16 +14,25 @@ export const FormRegister = () => {
     const fullName = event.target.fullName.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    if (fullName && email && password) {
+    if (fullName && email && password.length >= 6) {
       createUserWithEmailAndPassword(authFirebase, email, password)
         .then((userCredential) => {
-
           const user = userCredential.user;
           if (user) {
             set(ref(dbFirebase, 'users/' + user.uid), {
               fullName: fullName,
             }).then(() => {
-              console.log("đăng ký thành công!");
+              const alartLogin = document.querySelector(".alart");
+              if (alartLogin) {
+                const textAlartLogin = document.querySelector(".text-alart");
+                if (textAlartLogin) {
+                  textAlartLogin.innerHTML = `Đăng ký thành công`;
+                  alartLogin.classList.remove("hidden");
+                  setTimeout(() => {
+                    alartLogin.classList.add("hidden");
+                  }, 3000);
+                }
+              }
               router.push("/");
             })
 
@@ -31,7 +40,30 @@ export const FormRegister = () => {
         })
         .catch((error) => {
           console.log(error);
+          const alartLogin = document.querySelector(".alart");
+          if (alartLogin) {
+            const textAlartLogin = document.querySelector(".text-alart");
+            if (textAlartLogin) {
+              textAlartLogin.innerHTML = `Email đã tồn tại!`;
+              alartLogin.classList.remove("hidden");
+              setTimeout(() => {
+                alartLogin.classList.add("hidden");
+              }, 3000);
+            }
+          }
         });
+    } else {
+      const alartLogin = document.querySelector(".alart");
+      if (alartLogin) {
+        const textAlartLogin = document.querySelector(".text-alart");
+        if (textAlartLogin) {
+          textAlartLogin.innerHTML = `Mật khẩu phải có ít nhất 6 kí tự!`;
+          alartLogin.classList.remove("hidden");
+          setTimeout(() => {
+            alartLogin.classList.add("hidden");
+          }, 3000);
+        }
+      }
     }
   }
 

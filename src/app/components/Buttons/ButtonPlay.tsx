@@ -80,7 +80,7 @@ export const ButtonPlay = (props: any) => {
         const percent = currentTime * 100 / totalTime;
         elementPlayTimeCurrent.style.width = `${percent}%`;
         elementPlayTimeShow.value = currentTime;
-        if (percent === 99.5) {
+        if (percent >= 100) {
           elementPlay.classList.remove("play");
           elementAudio.pause();
           const currentSong = document.querySelector("[song-id].activeSong");
