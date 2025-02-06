@@ -4,19 +4,19 @@
 import { ButtonPlay } from "../Buttons/ButtonPlay";
 import { ButtonWishlist } from "../Buttons/ButtonWishlist";
 
-export const CardInfoMusic = (props: { image: string, title: string, description: string, audio: string, wishlist: boolean,listen:any, id: any }) => {
-  const { image, title, description, audio, wishlist,listen, id } = props;
-  const detailSong: any = [];
-  detailSong.push({
-    image: image,
-    title: title,
+export const CardInfoMusic = (props: { image: string, title: string, description: string, audio: string, wishlist: boolean, listen: any, id: any }) => {
+  const { image, title, description, audio, wishlist, listen, id } = props;
+  // const detailSong: any = [];
+  const detailSong = {
+    image,
+    title,
     singers: description,
-    audio: audio,
-    wishlist: wishlist,
-    listen:listen,
-    id: id,
-  })
-
+    audio,
+    wishlist,
+    listen,
+    id,
+  };
+  console.log(detailSong);
   console.log(wishlist);
   return (
     <>
@@ -36,8 +36,8 @@ export const CardInfoMusic = (props: { image: string, title: string, description
             {description}
           </div>
           <div className="flex gap-[10px] mt-[20px]">
-            <ButtonPlay item={detailSong[0]} className="text-[17px] text-white w-[40px] h-[40px] rounded-[50%] flex justify-center items-center border border-white inner-button-play  hover:bg-primary hover:border-primary transition-colors duration-200 " />
-            <ButtonWishlist item={detailSong[0]} className="text-[17px] text-white w-[40px] h-[40px]  rounded-full flex justify-center items-center border hover:bg-primary hover:border-primary  transition-colors duration-200 " />
+            <ButtonPlay item={detailSong} className="text-[17px] text-white w-[40px] h-[40px] rounded-[50%] flex justify-center items-center border border-white inner-button-play  hover:bg-primary hover:border-primary transition-colors duration-200 " />
+            <ButtonWishlist item={detailSong} className="text-[17px] text-white w-[40px] h-[40px]  rounded-full flex justify-center items-center border hover:bg-primary hover:border-primary  transition-colors duration-200 " />
           </div>
         </div>
       </div>

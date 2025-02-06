@@ -36,9 +36,6 @@ export default async function CategoryDetailPage(props: any) {
         onValue(ref(dbFirebase, '/singers/' + element), (itemNameSinger) => {
           listNameSinger.push(itemNameSinger.val().title);
         })
-        if (index != data.singerId.length - 1) {
-          listNameSinger.push(', ');
-        }
       }
 
 
@@ -47,7 +44,7 @@ export default async function CategoryDetailPage(props: any) {
           id: key,
           image: data.image,
           title: data.title,
-          singer: listNameSinger,
+          singers: listNameSinger.join(', '),
           listen: data.listen,
           link: "/songs/" + key,
           audio: data.audio,

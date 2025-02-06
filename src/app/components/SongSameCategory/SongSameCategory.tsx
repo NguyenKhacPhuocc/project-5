@@ -33,7 +33,7 @@ export default function SongSameCategory(props: any) {
               id: key,
               title: data.title,
               image: data.image,
-              singer: listNameSinger.join(", "),
+              singers: listNameSinger.join(", "),
               listen: data.listen,
               wishlist: data.wishlist ? data.wishlist[userId] : false,
               link: "/songs/" + key,

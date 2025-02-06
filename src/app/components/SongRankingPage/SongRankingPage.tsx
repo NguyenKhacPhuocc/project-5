@@ -24,7 +24,7 @@ export default function SongRankingPage() {
         id: key,
         image: data.image,
         title: data.title,
-        singer: listNameSinger.join(', '),
+        singers: listNameSinger.join(', '),
         time: "4:32",
         listen: data.listen,
         wishlist: data.wishlist?.[userId],

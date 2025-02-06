@@ -36,7 +36,7 @@ export const Section1 = () => {
             id: key,
             image: data.image,
             title: data.title,
-            singer: listNameSinger.join(', '),
+            singers: listNameSinger.join(', '),
             listen: data.listen,
             time: "4:32",
             link: "/songs/" + key,

@@ -10,7 +10,7 @@ interface Song {
   id: string;
   image: string;
   title: string;
-  singer: string[];
+  singers: string[];
   listen: number;
   link: string,
   audio: string,
@@ -41,7 +41,7 @@ export const SongSection1 = () => {
             id: key,
             image: data.image,
             title: data.title,
-            singer: listNameSinger.join(", "),
+            singers: listNameSinger.join(", "),
             listen: data.listen,
             link: "/songs/" + key,
             audio: data.audio,

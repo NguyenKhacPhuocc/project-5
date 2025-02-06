@@ -61,7 +61,7 @@ export default async function SongDetailPage(props: any) {
           id: key,
           title: data.title,
           image: data.image,
-          singer: listNameSinger.join(', '),
+          singers: listNameSinger.join(', '),
           listen: data.listen,
           time: "4:32",
           wishlist: data.wishlist ? data.wishlist[userId] : false,

@@ -78,7 +78,7 @@ export const Search = () => {
             id: key,
             image: data.image,
             title: data.title,
-            singer: listNameSinger.join(", "),
+            singers: listNameSinger.join(", "),
             time: "4:32",
             link: "/songs/" + key,
           });

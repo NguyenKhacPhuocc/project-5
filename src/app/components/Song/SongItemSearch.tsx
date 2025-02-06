@@ -36,7 +36,7 @@ export const SongItemSearch = (props: any) => {
         </Link>
         <div className="flex line-clamp-1">
           <div className="font-[400] text-[14px] leading-[17px] text-[#ffffff]">
-            {item.singer}
+            {item.singers}
           </div>
         </div>
       </div>

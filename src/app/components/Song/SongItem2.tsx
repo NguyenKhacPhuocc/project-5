@@ -12,7 +12,7 @@ export const SongItem2 = (props: any) => {
 
   const { item } = props;
   const [totalTime, setTotalTime] = useState<string>("Đang tải...");
-  const [singer, setSinger] = useState<string>("Đang tải...");
+  const [singers, setSingers] = useState<string>("Đang tải...");
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export const SongItem2 = (props: any) => {
   }, [item.audio]);
 
   useEffect(() => {
-    if (item.singer) {
-      setSinger(item.singer);
+    if (item.singers) {
+      setSingers(item.singers);
     }
   }, [item]);
 
@@ -58,7 +58,7 @@ export const SongItem2 = (props: any) => {
         </div>
         <div className="flex w-[45%] justify-between line-clamp-1 gap-[40px]">
           <div className="font-[400] text-[14px] leading-[17px] text-[#ffffff]">
-            {singer}
+            {singers}
           </div>
           <div className="flex gap-[18px] items-center">
             <audio ref={audioRef} className="hidden">

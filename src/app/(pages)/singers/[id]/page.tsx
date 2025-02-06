@@ -29,7 +29,7 @@ export default async function SingerDetailPage(props: any) {
       const key = item.key;
       const data = item.val();
 
-      if (data.singerId.some((singer: any) => singer === id)) {
+      if (data.singerId.some((singers: any) => singers === id)) {
         const listNameSinger: any = [];
         for (let index = 0; index < data.singerId.length; index++) {
           const element = data.singerId[index];
@@ -42,7 +42,7 @@ export default async function SingerDetailPage(props: any) {
           id: key,
           image: data.image,
           title: data.title,
-          singer: listNameSinger.join(', '),
+          singers: listNameSinger.join(', '),
           listen: data.listen,
           time: "4:32",
           link: '/songs/' + key,

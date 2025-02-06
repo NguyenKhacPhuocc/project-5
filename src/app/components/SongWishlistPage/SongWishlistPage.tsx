@@ -25,7 +25,7 @@ export default function SongWishListPage() {
           id: key,
           image: data.image,
           title: data.title,
-          singer: listNameSinger.join(', '),
+          singers: listNameSinger.join(', '),
           listen: data.listen,
           wishlist: data.wishlist?.[userId],
           link: '/songs/' + key,

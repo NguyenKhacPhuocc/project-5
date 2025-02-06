@@ -9,7 +9,9 @@ export const ButtonPlay = (props: any) => {
 
   const { item, className } = props;
   // const [link, setLink] = useState(""); // State để quản lý href động
+
   const handlePlay = () => {
+    console.log(item.singers);
     // phát nhạc
     const audio = item.audio;
     const elementPlayAudio = document.querySelector(".play-audio");
@@ -41,7 +43,7 @@ export const ButtonPlay = (props: any) => {
     //hiển thị tên ca sĩ
     const innerSinger: any = elementPlayAudio?.querySelector(".inner-singers");
     if (innerSinger) {
-      innerSinger.innerHTML = `${item.singer}`
+      innerSinger.innerHTML = `${item.singers}`
     }
 
     // thêm đường link hiển thị lời bài hát

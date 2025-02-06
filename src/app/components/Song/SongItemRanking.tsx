@@ -36,7 +36,7 @@ export const SongItemRanking = (props: any) => {
         </div>
         <div className="flex w-[45%] justify-between line-clamp-1 gap-[40px]">
           <div className="font-[400] text-[14px] leading-[17px] text-[#ffffff]">
-            {item.singer}
+            {item.singers}
           </div>
           <div className="items-center font-[400] text-[14px] leading-[17px] text-[#ffffff] flex gap-[20px]">
             <div className="">
