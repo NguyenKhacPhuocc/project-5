@@ -14,21 +14,21 @@ export default function Home() {
   return (
     <>
 
-      <section className="flex gap-[20px] mb-[30px]">
-        <div className="w-[534px]">
+      <section className="flex xl:gap-[20px] xl:mb-[30px] md:gap-[15px] md:mb-[20px] ">
+        <div className="lg:w-[534px] md:w-[53%]">
           <div
             className="w-full flex items-center bg-cover rounded-[15px]"
             style={{ backgroundImage: "url('/demo/bg-home-1.png' " }}
           >
-            <div className="ml-[30px] flex-1 mr-[34px]">
-              <h3 className="font-[700] text-[32px] text-[#ffffff]  mb-[6px]">
+            <div className="ml-[30px] flex-1 xl:mr-[34px] lg:mr-[25px]">
+              <h3 className="font-[700] xl:text-[32px] lg:text-[26px] md:text-[24px] text-[#ffffff]  mb-[6px]">
                 Nhạc EDM
               </h3>
-              <div className="font-[500] text-[14px] text-[#ffffff] ">
+              <div className="font-[500] xl:text-[14px]  md:text-[11px] lg:text-[12px] text-[#ffffff] ">
                 Top 100 Nhạc Electronic/Dance Âu Mỹ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Top 100 Nhạc Electronic/Dance Âu Mỹ
               </div>
             </div>
-            <div className="w-[215px] mt-[40px] mr-[24px]">
+            <div className="xl:w-[215px] md:w-[160px] xl:mt-[40px] xl:mr-[24px] lg:mt-[60px] lg:mr-[20px] md:mt-[40px] md:mr-[15px] ">
               <img
                 src="/demo/bg-home-2.png"
                 alt="background 2"

@@ -19,18 +19,18 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className="bg-bg1">
-        <Alart/>
+        <Alart />
 
-        <div className="container mx-auto">
+        <div className=" mx-auto">
           <div className="flex items-start">
-            <div className="w-[280px]">
+            <div className="w-[280px] z-20 lg:block menu open">
               <Sider />
             </div>
-            <div className="flex-1 ml-[20px] relative">
+            <div className="flex-1  relative mx-[3%]">
               <Suspense>
                 <Search />
               </Suspense>
-              <main className="mt-[30px] mb-[120px] min-h-screen">
+              <main className="xl:mt-[30px] xl:mb-[120px] lg:mt-[25px] lg:mb-[100px] md:mt-[20px] md:mb-[80px] sm:mt-[15px] sm:mb-[60px] min-h-screen mx-[5.2%]">
                 {children}
               </main>
             </div>

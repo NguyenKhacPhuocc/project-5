@@ -125,6 +125,12 @@ export const ButtonPlay = (props: any) => {
     const elementSong = document.querySelector(`[song-id = "${item.id}"]`);
     elementSong?.classList.add("activeSong");
 
+
+    const expandMenu = document.querySelector(".expand-menu");
+    if (expandMenu) {
+      expandMenu.classList.toggle("bottom-[100px]")
+    }
+
   }
 
   return (

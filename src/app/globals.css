@@ -83,8 +83,8 @@
 }
 
 .text-shadow-glow {
-  text-shadow: 0 0 20px #00ADEF;
-  transition: text-shadow 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(0, 173, 239, 0.6)) drop-shadow(0 0 10px rgba(0, 173, 239, 0.4));
+  animation: glow-pulse 0.5s infinite alternate ease-in-out;
 }
 
 .play-audio .button-switch-repeat .button-unrepeat {
@@ -108,3 +108,21 @@
   display: none;
 }
 
+.menu {
+  width: 280px;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu.open {
+  width: 90px;
+}
+
+.menu.open .title-menu,
+.menu.open .text-logo {
+  display: none;
+}
+
+.menu.open .icon-menu {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { authFirebase } from "@/app/firebaseConfig";
+import { ButtonMenu } from "../Buttons/ButtonMenu";
 
 export const Sider = () => {
 
@@ -71,20 +72,19 @@ export const Sider = () => {
 
   return (
     <>
-      <div className="bg-bg2 text-white h-[100vh] fixed w-[280px] ">
-        <div className="bg-bg3 py-[22px] px-[20px]">
+      {/* <div className="flex"> */}
+      <div className="bg-bg2 text-white h-[100vh] fixed w-[280px] menu open">
+        <div className="bg-bg3 lg:py-[22px] md:py-[16px] px-[20px]">
           <Link href={"/"} className="flex justify-start items-center gap-[12px] transition-transform transform hover:scale-110 hover:rotate-[-2deg]">
             <img
               src="/icon-logo.png"
               alt="logo"
-              className="w-auto h-[50px]"
+              className="w-auto lg:h-[50px] md:h-[40px]"
             />
-            <div className="text-primary text-[24px] font-[700] leading-[28px] relative">
-
+            <div className="text-primary lg:text-[24px] md:text-[18px] font-[700] leading-[28px] relative text-logo">
               {/* Chữ MuseStream với hiệu ứng nền mờ */}
               <span className="absolute inset-0 blur-md text-primary opacity-50">MuseStream</span>
               <span className="relative z-10">MuseStream</span>
-
               {/* Icon sole */}
               {["🎵", "✨", "🎶", "🎧", "🎷"].map((icon, index) => (
                 <span
@@ -108,18 +108,18 @@ export const Sider = () => {
             {menu
               .filter(item => (isLogin ? item.logged !== false : item.logged === false || item.logged === undefined)) // Lọc menu dựa trên trạng thái isLogin
               .map((item, index) => (
-                <li className="mb-[20px] " key={index}>
+                <li className="mb-[30px] " key={index}>
                   <Link
                     href={item.link}
                     className={
-                      "flex gap-[20px] items-center hover:text-primary transition-colors duration-200 py-[5px] " +
-                      (pathname === item.link ? "text-primary text-shadow-glow " : "text-white")
+                      "flex gap-[20px] items-center hover:text-primary transition-colors duration-200 py-[10px] " +
+                      (pathname === item.link ? "  text-shadow-glow text-primary" : " text-white ")
                     }
                   >
-                    <span className="text-[22px]">
+                    <span className="text-[26px] icon-menu">
                       {item.icon}
                     </span>
-                    <span className="font-[700] text-[16px] leading-[20px]">
+                    <span className="font-[700] text-[16px]  leading-[20px] title-menu line-clamp-1">
                       {item.title}
                     </span>
                   </Link>
@@ -127,6 +127,9 @@ export const Sider = () => {
               ))}
           </ul>
         </nav>
+        <div className="absolute bottom-0 right-0 expand-menu">
+          <ButtonMenu />
+        </div>
       </div>
     </>
   )

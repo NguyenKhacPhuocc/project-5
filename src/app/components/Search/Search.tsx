@@ -94,10 +94,10 @@ export const Search = () => {
   return (
     <form
       ref={formRef}
-      className="bg-[#212121] rounded-[50px] mt-[20px] py-[16px] px-[30px] sticky top-[20px] left-[20px] text-white flex items-center z-10"
+      className="bg-[#212121] rounded-[50px] lg:mt-[20px] md:mt-[15px] py-[16px] lg:px-[30px] md:px-[20px]   sticky top-[20px] left-[20px] text-white flex items-center z-10 flex-1"
       onSubmit={handleSearch}
     >
-      <label htmlFor="search" className="text-[22px] pr-[20px] cursor-pointer">
+      <label htmlFor="search" className=" lg:text-[22px] md:text-[20px] pr-[20px] cursor-pointer">
         <FaSearch />
       </label>
       <input
@@ -106,7 +106,7 @@ export const Search = () => {
         type="text"
         defaultValue={defaultKey}
         placeholder="Tìm kiếm..."
-        className="bg-transparent text-[16px] font-[500] leading-[20px] outline-none flex-1"
+        className="bg-transparent lg:text-[16px] md:text-[14px] font-[500] leading-[20px] outline-none flex-1"
         onChange={handleSearchChange}
         onFocus={() => setIsSearchActive(true)} // Hiển thị kết quả khi focus
       />
