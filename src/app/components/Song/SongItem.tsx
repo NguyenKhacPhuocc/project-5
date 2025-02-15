@@ -13,7 +13,7 @@ export const SongItem = (props: { item: any }) => {
   return (
     <>
       <div
-        className="flex bg-bg2 lg:p-[10px] md:p-[7px] rounded-[15px] justify-between items-center"
+        className="flex bg-bg2 lg:p-[10px] md:p-[7px] rounded-[15px] justify-between items-center "
         song-id={item.id}>
         <div className="flex items-center">
           <Link
