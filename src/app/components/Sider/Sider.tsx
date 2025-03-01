@@ -108,7 +108,7 @@ export const Sider = () => {
             {menu
               .filter(item => (isLogin ? item.logged !== false : item.logged === false || item.logged === undefined)) // Lọc menu dựa trên trạng thái isLogin
               .map((item, index) => (
-                <li className="mb-[30px] " key={index}>
+                <li className="mb-[20px] " key={index}>
                   <Link
                     href={item.link}
                     className={

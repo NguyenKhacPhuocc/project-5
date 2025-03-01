@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Danh sách bài hát",
+  title: "Danh sách",
   description: "Project nghe nhạc trực tuyến",
 };
 
