@@ -9,21 +9,17 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Danh sách",
-  description: "Project nghe nhạc trực tuyến",
+  description: "Nghe nhạc trực tuyến",
 };
 
 export default async function CategoryDetailPage(props: any) {
   const { id } = await props.params;
   let detailCategory: any = null;
+  const dataSong: any[] = []
 
   onValue(ref(dbFirebase, '/categories/' + id), (item) => {
     detailCategory = item.val();
   })
-  if (!detailCategory) {
-    return <div>Loading...</div>;
-  }
-
-  const dataSong: any[] = []
 
   onValue(ref(dbFirebase, '/songs'), (items) => {
     items.forEach((item) => {
@@ -37,7 +33,6 @@ export default async function CategoryDetailPage(props: any) {
           listNameSinger.push(itemNameSinger.val().title);
         })
       }
-
 
       if (data.categoryId === id) {
         dataSong.push({

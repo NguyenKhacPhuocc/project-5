@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Tìm kiếm",
-  description: "Project nghe nhạc trực tuyến",
+  description: "Nghe nhạc trực tuyến",
 };
 
 export default function SearchPage() {

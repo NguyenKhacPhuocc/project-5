@@ -4,7 +4,7 @@ import { FormLogin } from "./FormLogin";
 
 export const metadata: Metadata = {
   title: "Đăng nhập",
-  description: "Project nghe nhạc trực tuyến",
+  description: "Nghe nhạc trực tuyến",
 };
 
 export default function LoginPage() {
@@ -14,7 +14,7 @@ export default function LoginPage() {
         <div className="">
           <Title text={"Đăng Nhập Tài Khoản"} />
         </div>
-        <FormLogin/>
+        <FormLogin />
       </section>
     </>
   );

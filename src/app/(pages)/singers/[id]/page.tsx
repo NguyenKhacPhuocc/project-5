@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Chi tiết ca sĩ",
-  description: "Project nghe nhạc trực tuyến",
+  description: "Nghe nhạc trực tuyến",
 };
 
 export default async function SingerDetailPage(props: any) {

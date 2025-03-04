@@ -4,7 +4,7 @@ import { FormRegister } from "./FormRegister";
 
 export const metadata: Metadata = {
   title: "Đăng ký",
-  description: "Project nghe nhạc trực tuyến",
+  description: "Nghe nhạc trực tuyến",
 };
 
 export default function RegisterPage() {
@@ -14,7 +14,7 @@ export default function RegisterPage() {
         <div className="">
           <Title text={"Đăng Ký Tài Khoản"} />
         </div>
-        <FormRegister/>
+        <FormRegister />
       </section>
     </>
   );

@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Chi tiết bài hát",
-  description: "Project nghe nhạc trực tuyến",
+  description: "Nghe nhạc trực tuyến",
 };
 
 export default function SongDetailPage(props: any) {

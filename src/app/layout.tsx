@@ -8,7 +8,7 @@ import { Alart } from "./components/Alart/Alart";
 
 export const metadata: Metadata = {
   title: "MuseStream",
-  description: "Project nghe nhạc trực tuyến",
+  description: "Nghe nhạc trực tuyến",
 };
 
 export default function RootLayout({

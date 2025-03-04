@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Bài hát yêu thích",
-  description: "Project nghe nhạc trực tuyến",
+  description: "Nghe nhạc trực tuyến",
 };
 
 export default function WishListPage() {
   return (
     <>
-      <SongWishListPage/>
+      <SongWishListPage />
     </>
   );
 }
