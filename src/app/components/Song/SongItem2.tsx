@@ -11,8 +11,8 @@ import { useEffect, useRef, useState } from "react";
 export const SongItem2 = (props: any) => {
 
   const { item } = props;
-  const [totalTime, setTotalTime] = useState<string>("Đang tải...");
-  const [singers, setSingers] = useState<string>("Đang tải...");
+  const [totalTime, setTotalTime] = useState<string>("-:--");
+  const [singers, setSingers] = useState<string>("---");
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {

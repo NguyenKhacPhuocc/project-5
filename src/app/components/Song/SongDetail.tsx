@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import { CardInfoMusic } from "@/app/components/CategoryOutStanding/CardInfoMusic";
-// import { SongItem2 } from "@/app/components/Song/SongItem2";
 import SongSameCategory from "@/app/components/SongSameCategory/SongSameCategory";
 import { Title } from "@/app/components/Title/Title";
 import { authFirebase, dbFirebase } from "@/app/firebaseConfig";
@@ -12,10 +11,8 @@ export default function SongDetail(props: any) {
   const userId: any = authFirebase?.currentUser?.uid;
   console.log(userId);
   const { id } = props;
-
-
   const [detailSong, setDetailSong] = useState<any>(null);
-  // const detailSong: any = [];
+  
   useEffect(() => {
     const detailSongg: any = [];
     onValue(ref(dbFirebase, '/songs/' + id), (items) => {

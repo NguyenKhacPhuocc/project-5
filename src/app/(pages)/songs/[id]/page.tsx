@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import SongDetail from "@/app/components/Song/SongDetail";
 import { authFirebase } from "@/app/firebaseConfig";
-// import { use } from "react";
 import type { Metadata } from "next";
-// import { useParams } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Chi tiết bài hát",
