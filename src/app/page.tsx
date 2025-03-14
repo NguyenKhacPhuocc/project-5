@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description: "Nghe nhạc trực tuyến",
 };
 
+
 export default function Home() {
 
   return (
@@ -33,6 +34,7 @@ export default function Home() {
                 src="/demo/bg-home-2.png"
                 alt="background 2"
                 className="w-full h-auto"
+                rel="preload"
               />
             </div>
           </div>

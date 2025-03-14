@@ -7,9 +7,10 @@ export const CategoryOutStanding = (props: { item: any }) => {
   const { item } = props;
   return (
     <>
-      <Link href={item.link} className="flex flex-col gap-[10px] p-[10px] rounded-[12px] hover:bg-[#1F1F1F] transition-colors ">
+      <Link rel={"preload"} href={item.link} className="flex flex-col gap-[10px] p-[10px] rounded-[12px] hover:bg-[#1F1F1F] transition-colors ">
         <div className="w-[100%] aspect-[1/1] overflow-hidden  rounded-[10px] ">
           <img
+            loading="lazy"
             src={item.image} alt={item.title}
             className="w-full h-full object-cover transform transition-transform duration-200 hover:scale-[120%]"
           />

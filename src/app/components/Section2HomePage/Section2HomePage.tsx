@@ -1,7 +1,7 @@
 "use client";
 
 import { Title } from "../Title/Title";
-import { onValue, ref } from "firebase/database";
+import { get, ref } from "firebase/database";
 import { CategoryOutStanding } from "../CategoryOutStanding/CategoryOutStanding";
 import { dbFirebase } from "@/app/firebaseConfig";
 import { useState, useEffect } from "react";
@@ -36,20 +36,29 @@ export const Section2HomePage = () => {
 
   useEffect(() => {
     const categoryRef = ref(dbFirebase, "categories");
-    onValue(categoryRef, (items) => {
-      const newData: Category[] = [];
-      items.forEach((item) => {
-        if (newData.length < 5) {
-          newData.push({
-            id: item.key!,
-            image: item.val().image,
-            title: item.val().title,
-            description: item.val().description,
-            link: "/categories/" + item.key,
-          });
-        }
-      });
-      setData2(newData);
+  
+    // Sử dụng `get` để lấy dữ liệu một lần
+    get(categoryRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        const newData: Category[] = [];
+        snapshot.forEach((item) => {
+          if (newData.length < 5) {
+            newData.push({
+              id: item.key!,
+              image: item.val().image,
+              title: item.val().title,
+              description: item.val().description,
+              link: "/categories/" + item.key,
+            });
+          }
+        });
+        setData2(newData);
+      } else {
+        console.log("No data available");
+      }
+      setLoading(false);
+    }).catch((error) => {
+      console.error("Error fetching categories:", error);
       setLoading(false);
     });
   }, []);

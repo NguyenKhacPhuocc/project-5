@@ -22,12 +22,6 @@ export const Search = () => {
   };
   const defaultKey = searchParams.get("key") || "";
 
-  // const handleSearchChange = (event: any) => {
-  //   const Value = event.target.value.trim();
-  //   setSearchValue(Value);
-  //   setIsSearchActive(Value !== "" && dataFinal.length > 0); // Hiển thị nếu có giá trị
-  // };
-
   const handleSearchChange = (event: any) => {
     const Value = event.target.value.trim();
     const searchState = document.querySelector(".SearchState");

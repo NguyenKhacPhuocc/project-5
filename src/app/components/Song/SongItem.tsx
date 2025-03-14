@@ -7,9 +7,7 @@ import { ButtonWishlist } from "../Buttons/ButtonWishlist";
 export const SongItem = (props: { item: any }) => {
   const { item } = props;
   console.log(item.singers);
-  // const handlePlay = () => {
 
-  // }
   return (
     <>
       <div
