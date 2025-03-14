@@ -28,7 +28,9 @@ export const SingersPage = () => {
   return (
     <>
       <section className="">
-        <Title text={"Danh Sách Ca Sĩ"} />
+        <div className="mb-[10px]">
+          <Title text={"Danh Sách Ca Sĩ"} />
+        </div>
         <div className="grid grid-cols-5 ">
           {dataSinger.map((item: any, index: number) => (
             <CategoryOutStanding key={index} item={item} />

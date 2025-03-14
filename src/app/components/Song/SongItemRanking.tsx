@@ -16,7 +16,7 @@ export const SongItemRanking = (props: any) => {
           <div onClick={(e) => e.preventDefault()}>
             <ButtonPlay
               item={item}
-              className="text-[#ffffff] text-[24px] hover:text-primary transition-colors duration-200 hidden group-hover:block button-play"
+              className="text-[#ffffff] text-[24px] hover:text-primary transition-colors duration-200 invisible group-hover:visible group-hover:block button-play group-hover:mr-[20px] group-hover:hover:cursor-pointer"
             />
           </div>
           <div className="flex items-center gap-[12px]">
@@ -41,7 +41,7 @@ export const SongItemRanking = (props: any) => {
               {item.listen.toLocaleString("vi-VN")} lượt nghe
             </div>
             <div className="" onClick={(e) => e.preventDefault()}>
-              <ButtonWishlist item={item} className="text-[#ffffff] bg-opacity-0 text-[24px] hover:text-primary transition-colors duration-200" />
+              <ButtonWishlist item={item} className="text-[#ffffff] bg-primary/0 text-[24px] hover:text-primary transition-colors duration-200 hover:cursor-pointer" />
             </div>
           </div>
         </div>

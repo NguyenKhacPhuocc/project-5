@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Sider } from "./components/Sider/Sider";
 import { Search } from "./components/Search/Search";
 import { Play } from "./components/Play/Play";
 import { Suspense } from "react";
 import { Alart } from "./components/Alart/Alart";
-
+import "./globals.css";
 export const metadata: Metadata = {
   title: "MuseStream",
   description: "Nghe nhạc trực tuyến",
@@ -27,7 +26,7 @@ export default function RootLayout({
 
         <div className=" mx-auto">
           <div className="flex items-start">
-            <div className="w-[280px] z-20 lg:block menu open">
+            <div className="xl:w-[280px] lg:w-[240px] z-20 lg:block menu open">
               <Sider />
             </div>
             <div className="flex-1  relative mx-[3%]">

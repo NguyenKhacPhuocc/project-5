@@ -66,22 +66,19 @@ export const Sider = () => {
       logged: false,
     },
   ]
-
   const pathname = usePathname();
-  console.log(pathname);
-
   return (
     <>
       {/* <div className="flex"> */}
-      <div className="bg-bg2 text-white h-[100vh] fixed w-[280px] menu open">
+      <div className="bg-bg2 text-white h-[100vh] fixed xl:w-[280px] lg:w-[240px] menu open">
         <div className="bg-bg3 lg:py-[22px] md:py-[16px] px-[20px]">
           <Link href={"/"} className="flex justify-start items-center gap-[12px] transition-transform transform hover:scale-110 hover:rotate-[-2deg]">
             <img
               src="/icon-logo.png"
               alt="logo"
-              className="w-auto lg:h-[50px] md:h-[40px]"
+              className="w-auto lg:h-[50px] md:h-[40px] h-[30px]"
             />
-            <div className="text-primary lg:text-[24px] md:text-[18px] font-[700] leading-[28px] relative text-logo">
+            <div className="text-primary lg:text-[24px] md:text-[18px] text-[12px] font-[700] leading-[28px] relative text-logo">
               {/* Chữ MuseStream với hiệu ứng nền mờ */}
               <span className="absolute inset-0 blur-md text-primary opacity-50">MuseStream</span>
               <span className="relative z-10">MuseStream</span>

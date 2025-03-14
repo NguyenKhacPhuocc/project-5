@@ -36,7 +36,7 @@ export const Section2HomePage = () => {
 
   useEffect(() => {
     const categoryRef = ref(dbFirebase, "categories");
-  
+
     // Sử dụng `get` để lấy dữ liệu một lần
     get(categoryRef).then((snapshot) => {
       if (snapshot.exists()) {
@@ -94,7 +94,7 @@ export const Section2HomePage = () => {
             <div key={index} className="relative group">
               <CategoryOutStanding item={item} />
               {index === data2.slice(0, isLg ? 4 : 5).length - 1 && (
-                <Link href={"/categories"} className="hidden group-hover:flex flex-col absolute bottom-0 left-0 w-full h-full bg-[#5f718b] justify-center items-center bg-opacity-40 rounded-[15px]">
+                <Link href={"/categories"} className="invisible group-hover:visible group-hover:flex flex-col absolute bottom-0 left-0 w-full h-full bg-[#5f718b]/40 justify-center items-center z-10 rounded-[15px]">
                   <span className="text-white text-[20px] font-[700]">
                     Xem thêm
                   </span>

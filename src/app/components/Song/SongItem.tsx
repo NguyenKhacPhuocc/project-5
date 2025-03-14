@@ -38,8 +38,8 @@ export const SongItem = (props: { item: any }) => {
           </div>
         </div>
         <div className="flex lg:gap-[15px] md:gap-[10px]  ">
-          <ButtonPlay item={item} className="text-[17px] text-white xl:w-[40px] xl:h-[40px] md:w-[35px] md:h-[35px] rounded-[50%] flex justify-center items-center border border-white inner-button-play  hover:bg-primary hover:border-primary transition-colors duration-200 " />
-          <ButtonWishlist item={item} className=" text-[17px] text-white xl:w-[40px] xl:h-[40px] md:w-[35px] md:h-[35px]  rounded-full justify-center items-center border hover:bg-primary hover:border-primary  transition-colors duration-200 lg:flex md:hidden" />
+          <ButtonPlay item={item} className="text-[17px] text-white xl:w-[40px] xl:h-[40px] md:w-[35px] md:h-[35px] rounded-[50%] flex justify-center items-center border border-white inner-button-play  hover:bg-primary hover:border-primary transition-colors duration-200 hover:cursor-pointer" />
+          <ButtonWishlist item={item} className=" text-[17px] text-white xl:w-[40px] xl:h-[40px] md:w-[35px] md:h-[35px]  rounded-full justify-center items-center border hover:bg-primary hover:border-primary  transition-colors duration-200 lg:flex md:hidden hover:cursor-pointer" />
         </div>
       </div>
     </>

@@ -40,7 +40,7 @@ export const SongItem2 = (props: any) => {
     <>
       <div className=" mt-[20px] flex items-center justify-between bg-bg2 py-[10px] px-[18px] rounded-[15px] " song-id={item.id}>
         <div className="flex gap-[12px]">
-          <ButtonPlay item={item} className="text-[#ffffff] text-[24px] bg-opacity-0 hover:text-primary transition-colors duration-200 button-play" />
+          <ButtonPlay item={item} className="text-[#ffffff] text-[24px]  hover:text-primary transition-colors duration-200 button-play hover:cursor-pointer" />
           <Link href={item.link} className="flex items-center gap-[12px]">
             <div className="h-[50px] w-[50px] rounded-[8px] overflow-hidden">
               <img
@@ -65,7 +65,7 @@ export const SongItem2 = (props: any) => {
             <div className="font-[400] text-[14px] leading-[17px] text-[#ffffff]">
               {totalTime}
             </div>
-            <ButtonWishlist item={item} className="text-[#ffffff] bg-opacity-0 text-[24px] hover:text-primary transition-colors duration-200" />
+            <ButtonWishlist Title="bỏ yêu thích" item={item} className="text-[#ffffff] bg-primary/0 text-[24px] hover:text-primary transition-colors duration-200 hover:cursor-pointer" />
           </div>
         </div>
       </div>

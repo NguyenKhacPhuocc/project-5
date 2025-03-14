@@ -1,19 +1,17 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
-export default {
+const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       screens: {
-        'sm': '576px',
-        'md': '768px',
-        'lg': '992px',
-        'xl': '1280px', //nhỏ hơn 1280px là sang màn lg
-        '2xl': '1280px',
+        sm: "576px",
+        md: "768px",
+        lg: "992px",
+        xl: "1280px",
+        "2xl": "1280px",
       },
       colors: {
         background: "var(--background)",
@@ -26,4 +24,6 @@ export default {
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;

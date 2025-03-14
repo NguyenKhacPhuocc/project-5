@@ -15,15 +15,14 @@ export const ButtonMenu = () => {
       }
       const isOpen = buttonOpenMenu.classList.contains("open");
       setIsMenuOpen(isOpen);
-      console.log("open menu");
     }
   };
 
   return (
     <>
       <button
-        className={`text-[34px] lg:mt-[20px] md:mt-[15px]  p-[8px] expand-menu  
-          ${isMenuOpen ? "bg-bg2 rounded-[50%] text-primary" : "text-white"}   hover:bg-bg2 hover:rounded-[50%] hover:text-primary`}
+        className={`text-[34px] lg:mt-[20px] md:mt-[15px]  p-[8px] expand-menu hover:cursor-pointer   
+          ${isMenuOpen ? "text-white" : "bg-bg2 rounded-[50%] text-primary"}   hover:bg-bg2 hover:rounded-[50%] hover:text-primary`}
         onClick={handleOpenMenu}
       >
         <TiThMenu />
