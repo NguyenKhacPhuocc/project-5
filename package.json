@@ -6,7 +6,8 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "tailwind": "ts-node tailwind.config.ts"
+    "tailwind": "ts-node tailwind.config.ts",
+    "build": "next build"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.14",
